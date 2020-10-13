@@ -32,7 +32,7 @@ namespace SeleniumAutomation
             SeleniumSetMethods.EnterText(driver, "userName", "Test Automation 1.0", "Id");
             SeleniumSetMethods.Clear(driver,"userName", "Id");
             SeleniumSetMethods.EnterText(driver, "userName", "Test Automation 1.1", "Id");
-            Console.WriteLine("Entered Test Automation 1.0, cleared and entered Test Automation 1.1");
+            Console.WriteLine("Entered Test Automation 1.0, cleared and entered Test Automation 2.0");
         }
         [TearDown]
         public void CleanUp()
