@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using OpenQA.Selenium;
-
-
 
 namespace SeleniumAutomation
 {
     class SeleniumGetMethods
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="elementtype"></param>
+        /// <returns></returns>
         public static string GetText(string element, PropertyType elementtype)
         {
+            Thread.Sleep(1000);
             if (elementtype == PropertyType.Id)
                 return PropertiesCollection.driver.FindElement(By.Id(element)).Text;
             if (elementtype == PropertyType.Name)
