@@ -50,7 +50,7 @@ namespace SeleniumAutomation
             }
             Console.WriteLine("Login on application");
 
-
+            //Add products to cart
             SeleniumSetMethods.Click("/html/body/div[5]/div/div[2]/div/div[5]/div/div/h4/a", PropertyType.XPath);
             SeleniumSetMethods.Click("/html/body/div[5]/div/div[2]/div[2]/div/a", PropertyType.XPath);
             try
@@ -75,7 +75,7 @@ namespace SeleniumAutomation
             }
             Console.WriteLine("The products are added to the cart");
 
-
+            //Finish the order and payments
             PropertiesCollection.driver.Navigate().GoToUrl("https://demoblaze.com/cart.html");
             string total = SeleniumGetMethods.GetText("totalp", PropertyType.Id);
             Console.WriteLine("The total is: " + total);
