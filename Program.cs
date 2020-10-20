@@ -87,8 +87,9 @@ namespace SeleniumAutomation
             //Manipulate the string to make sure the total paid was 1020 USD   
             string alldata = SeleniumGetMethods.GetText("/html/body/div[10]/p", PropertyType.XPath);
             int firstStringPosition = alldata.IndexOf("Amount");
-            string totalpaid = alldata.Substring(firstStringPosition + 7, 9);
+            string totalpaid = alldata.Substring(firstStringPosition + 8, 7);
             Console.WriteLine("The total paid is: " + totalpaid);
+            Assert.AreEqual(totalpaid,total+" USD");
         }
         [TearDown]
         public void CleanUp()
