@@ -75,22 +75,7 @@ namespace SeleniumAutomation
             }
             Console.WriteLine("The products are added to the cart");
 
-            //Finish the order and payments
-            PropertiesCollection.driver.Navigate().GoToUrl("https://demoblaze.com/cart.html");
-            string total = SeleniumGetMethods.GetText("totalp", PropertyType.Id);
-            Console.WriteLine("The total is: " + total);
-            SeleniumSetMethods.Click("/html/body/div[6]/div/div[2]/button", PropertyType.XPath);
-            SeleniumSetMethods.EnterText("name", "Teste", PropertyType.Id);
-            SeleniumSetMethods.EnterText("card", "1234", PropertyType.Id);
-            SeleniumSetMethods.Click("/html/body/div[3]/div/div/div[3]/button[2]", PropertyType.XPath);
 
-            //Manipulate the string to make sure the total paid was 1020 USD   
-            string alldata = SeleniumGetMethods.GetText("/html/body/div[10]/p", PropertyType.XPath);
-            int firstStringPosition = alldata.IndexOf("Amount");
-            string totalpaid = alldata.Substring(firstStringPosition + 8, 7);
-            Console.WriteLine("The total paid is: " + totalpaid);
-            Assert.AreEqual(totalpaid,total+" USD");
-        }
         [TearDown]
         public void CleanUp()
         {
